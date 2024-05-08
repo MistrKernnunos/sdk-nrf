@@ -54,12 +54,12 @@ struct bt_conn_ctx_lib {
 	/** Connection contexts. */
 	struct bt_conn_ctx ctx[CONFIG_BT_MAX_CONN];
 
+	/** Memory slab instance where the memory is allocated. */
+	struct k_mem_slab * const mem_slab;
+
 	/** Context data mutex that ensures that only one connection context is
 	  * manipulated at a time. */
 	struct k_mutex * const mutex;
-
-	/** Memory slab instance where the memory is allocated. */
-	struct k_mem_slab * const mem_slab;
 };
 
 /**
